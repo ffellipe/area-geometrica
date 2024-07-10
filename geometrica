@@ -1,0 +1,42 @@
+import math
+
+def calcular_area_circulo(raio):
+    return math.pi * raio ** 2
+
+def calcular_area_retangulo(base, altura):
+    return base * altura
+
+def calcular_area_triangulo(base, altura):
+    return (base * altura) / 2
+
+def solicitar_dados_forma(forma):
+    if forma == '1':
+        raio = float(input("Digite o raio do círculo: "))
+        return calcular_area_circulo(raio)
+    elif forma == '2':
+        base = float(input("Digite a base do retângulo: "))
+        altura = float(input("Digite a altura do retângulo: "))
+        return calcular_area_retangulo(base, altura)
+    elif forma == '3':
+        base = float(input("Digite a base do triângulo: "))
+        altura = float(input("Digite a altura do triângulo: "))
+        return calcular_area_triangulo(base, altura)
+    else:
+        print("Opção inválida.")
+        return None
+
+def main():
+    print("Escolha a forma geométrica para calcular a área:")
+    print("1. Círculo")
+    print("2. Retângulo")
+    print("3. Triângulo")
+    
+    forma = input("Digite o número correspondente à forma geométrica: ")
+    
+    area = solicitar_dados_forma(forma)
+    
+    if area is not None:
+        print(f"A área da forma escolhida é: {area}")
+
+if __name__ == "__main__":
+    main()
